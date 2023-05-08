@@ -51,7 +51,7 @@ typedef struct liststr
  *@argv_x: an array of strings generated from arg
  *@path: a string path for the current command
  *@argc: the argument count
- *@line_count: the error count
+ *@line_count_: the error count
  *@err_num: the error code for exit()s
  *@linecount_flag: if on count this line of input
  *@filename: the program filename
@@ -70,7 +70,7 @@ typedef struct passinfo
 	char **argv_x;
 	char *path;
 	int argc;
-	unsigned int line_count;
+	unsigned int line_count_;
 	int err_num;
 	int linecount_flag;
 	char *filename;
@@ -108,6 +108,10 @@ void _puts_str(char *);
 // int main_shell_c(__attribute__((unused)) int argc_rd, char **agrv_rd);
 void set_info_initializes(info_t *, char **);
 void print_err(info_t *, char *);
+int print_decimal_num(int, int);
+void _err_puts(char *);
+int _err_putchar(char);
+char **list_to_str(list_t *);
 
 // start mack fun
 void _puts_str(char *);

@@ -9,11 +9,11 @@
  */
 void print_err(info_t *info, char *estr)
 {
-	_error_puts(info->filename);   /* up */
-	_error_puts(": ");   /* up */
+	_err_puts(info->filename);
+	_err_puts(": ");
 	print_decimal(info->line_count, STDERR_FILENO);
-	_error_puts(": ");   /* up */
-	_error_puts(info->argv_x[0]);   /* up */
-	_error_puts(": ");   /* up */
-	_error_puts(estr);   /* up */
+	_err_puts(": ");
+	_err_puts(info->argv_x[0]);
+	_err_puts(": ");
+	_err_puts(estr);
 }
