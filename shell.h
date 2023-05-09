@@ -14,25 +14,25 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/* for read/write buffers */
+/* for read/write buffers ? */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
-/* for command chaining */
+/* for command chaining ? */
 #define NORM	0
 #define OR		1
 #define AND		2
 #define CHAIN	3
 
-/* for convert_number() */
+/* for convert_number() ? */
 #define CONVERT_LOWERCASE	1
 #define CONVERT_UNSIGNED	2
 
 extern char **environ;
 
 /**
- * struct liststr - singly linked list
+ * struct liststr - singly linked list is linked list
  * @num: the number field
  * @str: a string
  * @next: points to the next node
@@ -46,20 +46,20 @@ typedef struct liststr
 
 /**
  *struct passinfo - contains pseudo-arguements to pass into a function,
- *		allowing uniform prototype for function pointer struct
- *@arg_c: a string generated from getline containing arguements
- *@argv_x: an array of strings generated from arg
- *@path: a string path for the current command
- *@argc: the argument count
- *@line_count_: the error count
- *@err_num: the error code for exit()s
- *@linecount_flag: if on count this line of input
- *@filename: the program filename
- *@env: linked list local copy of environ
- *@environ: custom modified copy of environ from LL env
- *@alias: the alias node
+ *		allowing uniform prototype for function pointer struct pointer struct
+ *@arg_c: a string generated from getline containing arguements pointer
+ *@argv_x: an array of strings generated from arg is arg
+ *@path: a string path for the current command  line
+ *@argc: the argument count  for the current command line
+ *@line_count_: the error count  for the current command line
+ *@err_num: the error code for exit()s  exit fun
+ *@linecount_flag: if on count this line of input pointer
+ *@filename: the program file name
+ *@env: linked list local copy of environ is env
+ *@environ: custom modified copy of environ from LL env 
+ *@alias: the alias node list
  *@env_changed: on if environ was changed
- *@status: the return status of the last exec'd command
+ *@status: the return status of the last exec'd command line
  *@cmd_buf: address of pointer to cmd_buf, on if chaining
  *@cmd_buf_type: CMD_type ||, &&, ;
  *@readfd: the fd from which to read line input
@@ -84,6 +84,8 @@ typedef struct passinfo
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
 } info_t;
+
+
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0}
@@ -112,6 +114,19 @@ int print_decimal_num(int, int);
 void _err_puts(char *);
 int _err_putchar(char);
 char **list_to_str(list_t *);
+int is_next_(info_t *, char *, size_t *);
+int is_delimiter_char(char , char *);
+int is_cmd_(info_t *, char *);
+int interactive_mode(info_t *);
+int _hsh_loop(info_t *, char **);
+char **get_environment(info_t *);
+void _free_string_list(char **);
+void _free_list(list_t **);
+
+// start size_t
+size_t list_length(const list_t *);
+ssize_t input_buf(info_t *, char **, size_t *);
+ssize_t get_input_nline(info_t *);
 
 // start mack fun
 void _puts_str(char *);
