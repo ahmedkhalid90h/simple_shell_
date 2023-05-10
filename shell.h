@@ -121,6 +121,9 @@ char *find_path_f(info_t *, char *, char *);
 int is_cmd_(info_t *, char *);
 char *dupl_chars(char *, int, int);
 void create_child_fork(info_t *);
+void free_str_list(char **);
+void free_list_node(list_t **);
+int _free_buf(void **);
 
 
 void print_err(info_t *, char *);
@@ -130,8 +133,6 @@ char **list_to_str(list_t *);
 int is_delimiter_char(char, char *);
 int _hsh_loop(info_t *, char **);
 char **get_environment(info_t *);
-void _free_string_list(char **);
-void _free_list(list_t **);
 
 // start mack fun
 

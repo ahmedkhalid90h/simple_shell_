@@ -11,7 +11,7 @@ void print_err(info_t *info, char *estr)
 {
 	_err_puts(info->filename);
 	_err_puts(": ");
-	print_decimal(info->line_count, STDERR_FILENO);
+	print_decimal(info->line_count_, STDERR_FILENO);
 	_err_puts(": ");
 	_err_puts(info->argv_x[0]);
 	_err_puts(": ");

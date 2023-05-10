@@ -17,11 +17,12 @@ void create_child_fork(info_t *info)
 		perror("Error:");
 		return;
 	}
+
 	if (child_pid_ == 0)
 	{
-		if (execve(info->path, info->argv, get_environ(info)) == -1)
+		if (execve(info->path_f, info->argv, get_environ(info)) == -1)
 		{
-			free_info(info, 1);
+			free_info_struct(info, 1);
 			if (errno == EACCES)
 				exit(126);
 			exit(1);

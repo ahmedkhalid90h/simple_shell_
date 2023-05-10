@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _free_string_list - frees a string of strings written
+ * free_str_list - frees a string of strings written
  * @str_ing: string of strings
  */
-void _free_string_list(char **str_ing)
+void free_str_list(char **str_ing)
 {
 	char **a = str_ing;
 	int i;

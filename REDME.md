@@ -24,9 +24,12 @@ add  fun because betty /* up */
 @up  file is_cmd.c --> is_cmd_.c
 @up  file dup_chars.c --> dupl_chars.c
 @up  file create_child.c --> create_child_fork.c
-@up  file dup_chars.c --> dupl_chars.c
-@up  file dup_chars.c --> dupl_chars.c
-@up  file dup_chars.c --> dupl_chars.c
+@up  file free_info.c --> free_info_struct.c
+@up  file free_string_list.c --> free_str_list.c
+@up  file _free_buffer.c --> _free_buf.c
+@up  file free_list.c --> free_list_node.c
+@up  file free_list.c --> free_list_node.c
+@up  file free_list.c --> free_list_node.c
 @up
 @up
 @up

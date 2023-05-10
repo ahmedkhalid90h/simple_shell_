@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _free_list - frees all nodes of a list node
+ * free_list_node - frees all nodes of a list node
  * @head_ptr: address of pointer to head node
  *
  * Return: void
  */
-void _free_list(list_t **head_ptr)
+void free_list_node(list_t **head_ptr)
 {
 	list_t *current_node, *next_node, *head;
 

@@ -11,10 +11,10 @@ void find_commd(info_t *info)
     char *path = NULL;
     int counter = 0, k = 0;
 
-    info->path = info->argv[0];
+    info->path_f = info->argv[0];
     if (info->linecount_flag == 1)
     {
-        info->line_count++;
+        info->line_count_++;
         info->linecount_flag = 0;
     }
 
@@ -30,7 +30,7 @@ void find_commd(info_t *info)
     path = find_path_f(info, getenv(info, "PATH="), info->argv[0]); /* up to _getenv */
     if (path)
     {
-        info->path = path;
+        info->path_f = path;
         create_child_fork(info);
     }
     else
@@ -38,7 +38,7 @@ void find_commd(info_t *info)
         if ((interactive_mode(info)) || getenv(info, "PATH=") /* up to _getenv */
             || info->argv[0][0] == '/' && is_cmd_(info, info->argv[0]))
             create_child_fork(info);
-        else if (*(info->arg) != '\n')
+        else if (*(info->arg_c) != '\n')
         {
             info->status = 127;
             print_error(info, "not found\n");
