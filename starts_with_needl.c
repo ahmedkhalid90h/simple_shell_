@@ -10,7 +10,8 @@
 
 char *starts_with_needl(const char *haystack_dt, const char *needle_frist_dt)
 {
-	for (int i = 0; needle_frist_dt[i] != '\0'; i++)
+	int i;
+	for (i = 0; needle_frist_dt[i] != '\0'; i++)
 		if (needle_frist_dt[i] != haystack_dt[i])
 			return NULL;
 	return (char *)haystack_dt;

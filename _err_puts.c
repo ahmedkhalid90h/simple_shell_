@@ -8,9 +8,10 @@
  */
 void _err_puts(char *string)
 {
+	int inx;
 	if (!string)
 		return;
-	for (int inx = 0; string[inx] != '\0'; inx++)
+	for ( inx = 0; string[inx] != '\0'; inx++)
 	{
 		_err_putchar(string[inx]);  
 	}

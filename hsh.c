@@ -27,9 +27,9 @@ int hsh(info_t *info, char **av_vector)
 		}
 		else if (interactive_mode(info))
 			putchar('\n'); /* up to _putchar */
-		free_info_struct(info, 0);
+		_free_info_struct(info, 0);
 	}
-	free_info_struct(info, 1);
+	_free_info_struct(info, 1);
 	if (!interactive_mode(info) && info->status)
 		exit(info->status);
 	if (builtin_ret_co == -2)

@@ -16,18 +16,18 @@ int is_next_c(info_t *info, char *buffer, size_t *address)
 	{
 		buffer[j] = 0;
 		j++;
-		info->cmd_buffer_type = OR;
+		info->cmd_buf_type = OR;
 	}
 	else if (buffer[j] == '&' && buffer[j + 1] == '&')
 	{
 		buffer[j] = 0;
 		j++;
-		info->cmd_buffer_type = AND;
+		info->cmd_buf_type = AND;
 	}
 	else if (buffer[j] == ';') /* found end of this command */
 	{
 		buffer[j] = 0; /* replace semicolon with null */
-		info->cmd_buffer_type = CHAIN;
+		info->cmd_buf_type = CHAIN;
 	}
 	else
 		return (0);

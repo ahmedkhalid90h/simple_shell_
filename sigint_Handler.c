@@ -8,7 +8,7 @@
  */
 void sigint_Handler(__attribute__((unused))int signal_number)
 {
-	puts("\n");  // _puts_str /* up */
-	puts("$ ");  // _puts_str /* up */
-	putchar(BUF_FLUSH);  // _putchar /* up */
+	puts("\n");   /* up _puts_str */
+	puts("$ ");   /* up _puts_str */
+	putchar(BUF_FLUSH);   /* up _putchar */
 }

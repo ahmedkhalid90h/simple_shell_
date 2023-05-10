@@ -17,7 +17,7 @@ ssize_t input_buf(info_t *info, char **buff, size_t *leng)
 	{
 		free(*buff);
 		*buff = NULL;
-		signal(SIGINT, sigintHandler);
+		signal(SIGINT, sigint_Handler);
 
 		by_r = getline(buff, &len_p, stdin);
 
@@ -33,7 +33,7 @@ ssize_t input_buf(info_t *info, char **buff, size_t *leng)
 			/* TODO remove comments */
 
 			*leng = by_r;
-			info->cmd_buff = buff;
+			info->cmd_buf = buff;
 		}
 	}
 	return (by_r);

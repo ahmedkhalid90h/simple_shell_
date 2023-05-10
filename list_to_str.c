@@ -9,7 +9,7 @@
 char **list_to_str(list_t *head_node)
 {
 	list_t *node = head_node;
-	size_t i = list_len(head_node), js;
+	size_t i = list_length(head_node), js;
 	char **strs;
 	char *str;
 

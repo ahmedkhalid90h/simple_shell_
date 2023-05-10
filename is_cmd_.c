@@ -10,7 +10,6 @@
 int is_cmd_(info_t *info, char *path_f)
 {
 	struct stat st;
-	int is_executable = 0;
 
 	(void)info;
 	if (!path_f || stat(path_f, &st))

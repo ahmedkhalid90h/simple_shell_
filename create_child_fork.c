@@ -20,9 +20,9 @@ void create_child_fork(info_t *info)
 
 	if (child_pid_ == 0)
 	{
-		if (execve(info->path_f, info->argv_x, get_environ(info)) == -1)
+		if (execve(info->path_f, info->argv_x, get_environment(info)) == -1)
 		{
-			free_info_struct(info, 1);
+			_free_info_struct(info, 1);
 			if (errno == EACCES)
 				exit(126);
 			exit(1);

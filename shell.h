@@ -100,11 +100,10 @@ typedef struct builtin
 	int (*func)(info_t *);
 } builtin_table;
 
-//  end
+
 
 char *starts_with_needl(const char *, const char *);
 void sigint_Handler(int);
-// int main(__attribute__((unused)) int argc_rd, char **agrv_rd);
 void initializes_info(info_t *);
 int interactive_mode(info_t *);
 int _err_putchar(char);
@@ -129,17 +128,18 @@ char **list_to_str(list_t *);
 int hsh(info_t *, char **);
 char **get_environment(info_t *);
 int is_delimeter_char(char, char *);
-int _puts_fd(char *string, int fd);
+int _puts_fd(char *, int);
 void _puts_str(char *);
+int populate_env_list(info_t *);
 
 
 
-// start mack fun
 
-// start size_t
+
+
 size_t list_length(const list_t *);
 
-// start mack fun in C
+
 int _putchar(char);
 int _strlen(char *);
 char **_strtok(char *, char *);

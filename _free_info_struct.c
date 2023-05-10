@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * free_info_struct - frees info_t struct fields or false
+ * _free_info_struct - frees info_t struct fields or false
  * @info: struct address
  * @all_tr: true if freeing all fields
  */
-void free_info_struct(info_t *info, int all_tr)
+void _free_info_struct(info_t *info, int all_tr)
 {
 	free_str_list(info->argv_x);
 	info->argv_x= NULL;
