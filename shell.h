@@ -49,7 +49,7 @@ typedef struct liststr
  *		allowing uniform prototype for function pointer struct pointer struct
  *@arg_c: a string generated from getline containing arguements pointer
  *@argv_x: an array of strings generated from arg is arg
- *@path: a string path for the current command  line
+ *@path_f: a string path for the current command  line
  *@argc: the argument count  for the current command line
  *@line_count_: the error count  for the current command line
  *@err_num: the error code for exit()s  exit fun
@@ -62,13 +62,13 @@ typedef struct liststr
  *@status: the return status of the last exec'd command line
  *@cmd_buf: address of pointer to cmd_buf, on if chaining
  *@cmd_buf_type: CMD_type ||, &&, ;
- *@readfd: the fd from which to read line input
+ *@_f: the fd from which to read line input
  */
 typedef struct passinfo
 {
 	char *arg_c;
 	char **argv_x;
-	char *path;
+	char *path_f;
 	int argc;
 	unsigned int line_count_;
 	int err_num;
@@ -82,7 +82,7 @@ typedef struct passinfo
 
 	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
-	int readfd;
+	int readfd_f;
 } info_t;
 
 
@@ -104,33 +104,38 @@ typedef struct builtin
 
 //  end
 
-char *starts_with_need(const char *, const char *);
+char *starts_with_needl(const char *, const char *);
 void sigint_Handler(int);
-void _puts_str(char *);
 // int main_shell_c(__attribute__((unused)) int argc_rd, char **agrv_rd);
+void initializes_info(info_t *);
+int interactive_mode(info_t *);
+int _err_putchar(char);
+ssize_t get_input_nline(info_t *);
+ssize_t input_buf(info_t *, char **, size_t *);
+void check_next_f(info_t *, char *, size_t *, size_t , size_t );
+int is_next_c(info_t *, char *, size_t *);
 void set_info_initializes(info_t *, char **);
+
 void print_err(info_t *, char *);
 int print_decimal_num(int, int);
 void _err_puts(char *);
-int _err_putchar(char);
 char **list_to_str(list_t *);
-int is_next_(info_t *, char *, size_t *);
 int is_delimiter_char(char , char *);
 int is_cmd_(info_t *, char *);
-int interactive_mode(info_t *);
 int _hsh_loop(info_t *, char **);
 char **get_environment(info_t *);
 void _free_string_list(char **);
 void _free_list(list_t **);
 
+// start mack fun
+
 // start size_t
 size_t list_length(const list_t *);
-ssize_t input_buf(info_t *, char **, size_t *);
-ssize_t get_input_nline(info_t *);
 
-// start mack fun
+// start mack fun in C
 void _puts_str(char *);
 int _putchar(char);
+int _strlen(char *);
 
 
 #endif

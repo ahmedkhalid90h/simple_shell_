@@ -12,7 +12,7 @@ void set_info_initializes(info_t *info, char **av)
     info->filename = av[0];
     if (info->arg_c)
     {
-        info->argv_x = _strtok(info->arg_c, " \t");
+        info->argv_x = _strtok(info->arg_c, " \t");  // wait
         if (!info->argv_x)
         {
             info->argv_x = malloc(sizeof(char *) * 2);

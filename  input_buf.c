@@ -10,7 +10,7 @@
  */
 ssize_t input_buf(info_t *info, char **buff, size_t *leng)
 {
-	ssize_t r = 0;
+	ssize_t by_r = 0;
 	size_t len_p = 0;
 
 	if (!*leng) /* if nothing left in the buffer, fill it */
@@ -19,22 +19,22 @@ ssize_t input_buf(info_t *info, char **buff, size_t *leng)
 		*buff = NULL;
 		signal(SIGINT, sigintHandler);
 
-		r = getline(buff, &len_p, stdin);
+		by_r = getline(buff, &len_p, stdin);
 
-		if (r > 0)
+		if (by_r > 0)
 		{
-			if ((*buff)[r - 1] == '\n')
+			if ((*buff)[by_r - 1] == '\n')
 			{
-				(*buff)[r - 1] = '\0'; /* remove trailing newline */
-				r--;
+				(*buff)[by_r - 1] = '\0'; /* remove trailing newline */
+				by_r--;
 			}
 			info->linecount_flag = 1;
 
 			/* TODO remove comments */
 
-			*leng = r;
+			*leng = by_r;
 			info->cmd_buff = buff;
 		}
 	}
-	return (r);
+	return (by_r);
 }

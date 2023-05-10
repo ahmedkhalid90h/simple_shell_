@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * is_next_ - test if current char in buffer is a chain delimeter line
+ * is_next_c - test if current char in buffer is a chain delimeter line
  * @info: the parameter struct
  * @buffer: the char buffer
  * @address: address of current position in buf
  *
  * Return: 1 if chain delimeter, 0 otherwise
  */
-int is_next_(info_t *info, char *buffer, size_t *address)
+int is_next_c(info_t *info, char *buffer, size_t *address)
 {
 	size_t j = *address;
 

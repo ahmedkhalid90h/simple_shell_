@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * _hsh_loop - main shell loop hsh
- * @info: the parameter & return info struct
+ * _hsh_loop - main shell for loop hsh 
+ * @info: the parameter & retentry pointurn info struct
  * @av_vector: the argument vector from main()
  *
  * Return: 0 on success, 1 on error, or error code
@@ -14,14 +14,14 @@ int _hsh_loop(info_t *info, char **av_vector)
 
 	for (;r != -1 && builtin_ret_co != -2)
 	{
-		clear_info(info);
+		initializes_info(info);
 		if (interactive_mode(info))
-			_puts("$ ");
+			puts("$ "); /* up to _puts_str */
 		_err_putchar(BUF_FLUSH);
 		r = get_input_nline(info);
 		if (r != -1)
 		{
-			set_info_initializes(info, av_vector);
+			set_info_initializes(info, av_vector); // wait
 			/* TODO find builtin*/
 				find_cmd(info);
 		}

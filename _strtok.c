@@ -7,7 +7,7 @@
  * Return: a pointer to an array of strings, or NULL on failure
  */
 
-char **_strtok(char *str, char *d)
+char **_strtok(char *str, char *d)  // wait
 {
 	int i, j, k, m, numwords = 0;
 	char **s;

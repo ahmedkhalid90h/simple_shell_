@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * main_shell_c - entry point
+ * main_shell_c - entry point check true or false
  * @argc_rd: arg count
  * @agrv_rd: arg vector
  *
@@ -11,6 +11,6 @@ int main_shell_c(__attribute__((unused)) int argc_rd, char **agrv_rd)
 {
 	info_t info[] = { INFO_INIT };
 
-	hsh(info, agrv_rd);
+	_hsh_loop(info, agrv_rd);
 	return (EXIT_SUCCESS);
 }
