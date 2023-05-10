@@ -1,18 +1,18 @@
 #include "shell.h"
 
 /**
- * _hsh_loop - main shell for loop hsh 
+ * hsh - main shell for loop hsh 
  * @info: the parameter & retentry pointurn info struct
  * @av_vector: the argument vector from main()
  *
  * Return: 0 on success, 1 on error, or error code
  */
-int _hsh_loop(info_t *info, char **av_vector)
+int hsh(info_t *info, char **av_vector)
 {
 	ssize_t r = 0;
 	int builtin_ret_co = 0;
 
-	for (;r != -1 && builtin_ret_co != -2)
+	for (;r != -1 && builtin_ret_co != -2;)
 	{
 		initializes_info(info);
 		if (interactive_mode(info))

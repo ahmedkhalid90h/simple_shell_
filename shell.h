@@ -1,5 +1,3 @@
-//   struct
-
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
@@ -106,7 +104,7 @@ typedef struct builtin
 
 char *starts_with_needl(const char *, const char *);
 void sigint_Handler(int);
-// int main_shell_c(__attribute__((unused)) int argc_rd, char **agrv_rd);
+// int main(__attribute__((unused)) int argc_rd, char **agrv_rd);
 void initializes_info(info_t *);
 int interactive_mode(info_t *);
 int _err_putchar(char);
@@ -128,10 +126,10 @@ void print_err(info_t *, char *);
 void _err_puts(char *);
 int print_decimal_num(int, int);
 char **list_to_str(list_t *);
-int _hsh_loop(info_t *, char **);
+int hsh(info_t *, char **);
 char **get_environment(info_t *);
 int is_delimeter_char(char, char *);
-int _puts_fd(char *string, int fd)
+int _puts_fd(char *string, int fd);
 void _puts_str(char *);
 
 
