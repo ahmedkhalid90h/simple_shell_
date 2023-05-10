@@ -2,36 +2,40 @@
 
 /**
  * _itoa - converts a number to a string
- * @num: number
- * @base: base
- * @flags: argument flags
+ * @number: number
+ * @base_s: base
+ * @flag: argument flags
  *
  * Return: string
  */
-char *_itoa(long int num, int base, int flags)
+char *_itoa(long int number, int base_s, int flag)
 {
-	static char *array;
+	static char *arr;
 	static char buffer[50];
-	char sign = 0;
-	char *ptr;
-	unsigned long n = num;
+	char sign_check = 0;
+	char *ptr_add;
+	unsigned long n = number;
 
-	if (!(flags & CONVERT_UNSIGNED) && num < 0)
+
+	if (!(flag & CONVERT_UNSIGNED) && number < 0)
 	{
-		n = -num;
-		sign = '-';
+		n = -number;
+		sign_check = '-';
+
 
 	}
-	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
-	ptr = &buffer[49];
-	*ptr = '\0';
+	arr = flag & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
+	ptr_add = &buffer[49];
+	*ptr_add = '\0';
+
 
 	do	{
-		*--ptr = array[n % base];
-		n /= base;
+		*--ptr_add = arr[n % base_s];
+		n /= base_s;
 	} while (n != 0);
 
-	if (sign)
-		*--ptr = sign;
-	return (ptr);
+
+	if (sign_check)
+		*--ptr_add = sign_check;
+	return (ptr_add);
 }

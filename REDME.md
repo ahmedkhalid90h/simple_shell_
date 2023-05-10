@@ -28,8 +28,12 @@ add  fun because betty /* up */
 @up  file free_string_list.c --> free_str_list.c
 @up  file _free_buffer.c --> _free_buf.c
 @up  file free_list.c --> free_list_node.c
-@up  file free_list.c --> free_list_node.c
-@up  file free_list.c --> free_list_node.c
+@up  file print_error.c --> print_err.c
+@up  file _putsfd.c --> _puts_fd.c
+@up  file _error_puts.c --> _err_puts.c
+@up  file _error_puts.c --> _err_puts.c
+@up  file _error_puts.c --> _err_puts.c
+@up  file _error_puts.c --> _err_puts.c
 @up
 @up
 @up

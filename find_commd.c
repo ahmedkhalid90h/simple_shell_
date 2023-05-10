@@ -41,7 +41,7 @@ void find_commd(info_t *info)
         else if (*(info->arg_c) != '\n')
         {
             info->status = 127;
-            print_error(info, "not found\n");
+            print_err(info, "not found\n");
         }
     }
 }

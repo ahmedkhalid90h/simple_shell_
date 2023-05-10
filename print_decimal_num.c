@@ -14,7 +14,7 @@ int print_decimal_num(int inputs, int fdesc)
 	unsigned int _abs, curr;
 
 	if (fdesc == STDERR_FILENO)
-		__putchar = _error_putchar;
+		__putchar = _err_putchar;
 	if (inputs < 0)
 	{
 		_abs = -inputs;

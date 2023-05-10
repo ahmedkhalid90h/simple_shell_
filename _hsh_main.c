@@ -23,10 +23,10 @@ int _hsh_loop(info_t *info, char **av_vector)
 		{
 			set_info_initializes(info, av_vector);
 			/* TODO find builtin*/
-				find_commd(info); // wait
+				find_commd(info); 
 		}
 		else if (interactive_mode(info))
-			_putchar('\n');
+			putchar('\n'); /* up to _putchar */
 		free_info_struct(info, 0);
 	}
 	free_info_struct(info, 1);

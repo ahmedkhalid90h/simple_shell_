@@ -124,15 +124,17 @@ void create_child_fork(info_t *);
 void free_str_list(char **);
 void free_list_node(list_t **);
 int _free_buf(void **);
-
-
 void print_err(info_t *, char *);
-int print_decimal_num(int, int);
 void _err_puts(char *);
+int print_decimal_num(int, int);
 char **list_to_str(list_t *);
-int is_delimiter_char(char, char *);
 int _hsh_loop(info_t *, char **);
 char **get_environment(info_t *);
+int is_delimeter_char(char, char *);
+int _puts_fd(char *string, int fd)
+void _puts_str(char *);
+
+
 
 // start mack fun
 
@@ -140,13 +142,13 @@ char **get_environment(info_t *);
 size_t list_length(const list_t *);
 
 // start mack fun in C
-void _puts_str(char *);
 int _putchar(char);
 int _strlen(char *);
 char **_strtok(char *, char *);
 char *_strdup(const char *);
 char *_strcat(char *, char *);
 char *_getenv(info_t *, const char *);
+char *_strcpy(char *, char *);
 
 
 

@@ -34,7 +34,7 @@ char **list_to_str(list_t *head_node)
 			return (NULL);
 		}
 
-		str = _strcpy(str, node->str);
+		str = strcpy(str, node->str); /*  up _strcpy */
 		strs[i] = str;
 		node = node->next;
 		i++;

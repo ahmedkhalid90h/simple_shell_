@@ -23,6 +23,6 @@ void free_info_struct(info_t *info, int all_tr)
 		_free_buf((void **)info->cmd_buf);
 		if (info->readfd_f > 2)
 			close(info->readfd_f);
-		_putchar(BUF_FLUSH);
+		putchar(BUF_FLUSH); /* up to _putchar */
 	}
 }
