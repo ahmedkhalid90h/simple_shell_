@@ -21,9 +21,9 @@ int _hsh_loop(info_t *info, char **av_vector)
 		r = get_input_nline(info);
 		if (r != -1)
 		{
-			set_info_initializes(info, av_vector); // wait
+			set_info_initializes(info, av_vector);
 			/* TODO find builtin*/
-				find_cmd(info);
+				find_commd(info); // wait
 		}
 		else if (interactive_mode(info))
 			_putchar('\n');

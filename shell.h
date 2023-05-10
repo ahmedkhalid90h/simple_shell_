@@ -115,13 +115,19 @@ ssize_t input_buf(info_t *, char **, size_t *);
 void check_next_f(info_t *, char *, size_t *, size_t , size_t );
 int is_next_c(info_t *, char *, size_t *);
 void set_info_initializes(info_t *, char **);
+int is_delimeter_char(char, char *);
+void find_commd(info_t *);
+char *find_path_f(info_t *, char *, char *);
+int is_cmd_(info_t *, char *);
+char *dupl_chars(char *, int, int);
+void create_child_fork(info_t *);
+
 
 void print_err(info_t *, char *);
 int print_decimal_num(int, int);
 void _err_puts(char *);
 char **list_to_str(list_t *);
-int is_delimiter_char(char , char *);
-int is_cmd_(info_t *, char *);
+int is_delimiter_char(char, char *);
 int _hsh_loop(info_t *, char **);
 char **get_environment(info_t *);
 void _free_string_list(char **);
@@ -136,6 +142,11 @@ size_t list_length(const list_t *);
 void _puts_str(char *);
 int _putchar(char);
 int _strlen(char *);
+char **_strtok(char *, char *);
+char *_strdup(const char *);
+char *_strcat(char *, char *);
+char *_getenv(info_t *, const char *);
+
 
 
 #endif

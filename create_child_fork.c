@@ -1,23 +1,23 @@
 #include "shell.h"
 
 /**
- * create_child - forks a an exec thread to run cmd
+ * create_child_fork - forks a an executable thread to run cmd
  * @info: the parameter & return info struct
  *
  * Return: void
  */
-void create_child(info_t *info)
+void create_child_fork(info_t *info)
 {
-	pid_t child_pid;
+	pid_t child_pid_;
 
-	child_pid = fork();
-	if (child_pid == -1)
+	child_pid_ = fork();
+	if (child_pid_ == -1)
 	{
 		/* TODO: PUT ERROR FUNCTION */
 		perror("Error:");
 		return;
 	}
-	if (child_pid == 0)
+	if (child_pid_ == 0)
 	{
 		if (execve(info->path, info->argv, get_environ(info)) == -1)
 		{
