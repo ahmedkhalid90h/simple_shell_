@@ -147,7 +147,7 @@ char *_strdup(const char *);
 char *_strcat(char *, char *);
 char *_getenv(info_t *, const char *);
 char *_strcpy(char *, char *);
-
+int _strcmp(char *, char *);
 
 
 #endif
