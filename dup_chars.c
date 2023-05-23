@@ -21,5 +21,5 @@ buf[k++] = path_str[i];
 i++;
 }
 buf[k] = '\0';
-return buf;
+return (buf);
 }
